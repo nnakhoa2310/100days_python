@@ -2,7 +2,7 @@ class Person:
   def __init__(self,fname,lname):
     self.fname = fname
     self.lname = lname
-  def myprint(self):
+  def myprint(sself):
     print('my name is ', self.fname, self.lname)
 class Me(Person):
   def __init__(self,fname,lname):
