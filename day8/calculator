@@ -1,0 +1,4 @@
+def paint_calc(h,w,c):
+  return round((h*w)/c)
+print("U will need", paint_calc(int(input("h:")),int(input("w:")),int(input("c:"))), "can of paint")
+

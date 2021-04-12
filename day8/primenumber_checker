@@ -1,0 +1,6 @@
+def prime_number_checker(a):
+  if(a != 2 and a != 3 and a != 5 and a%2==0 or a%3==0 or a%5==0):
+    print(a, "is not prime number")
+  else :
+    print(a, "is a prime number")
+prime_number_checker(int(input("a:")))
