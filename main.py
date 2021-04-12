@@ -20,7 +20,7 @@ while not status:
   text = input("text: ")
   shift = int(input("shift: "))
   if shift >= 26:
-    shift /= 26
+    shift %= 26
   print(derection, ":" ,caesar(text,shift,derection))
   restart = input("restart(yes/no):")
   if restart == "no":
