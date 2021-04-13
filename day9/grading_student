@@ -1,0 +1,15 @@
+students = {}
+status = False
+while not status:
+  name = input("Name: ")
+  score = int(input("Score: "))
+  students[name] = score
+  con = input("continue(y/n)")
+  if con == "n":
+    status = True
+highest_score = 0
+for name in students:
+  if students[name] > highest_score:
+    highest_score = students[name]
+print("The hightest score is: ",highest_score)
+
