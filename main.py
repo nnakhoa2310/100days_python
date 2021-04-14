@@ -7,31 +7,31 @@ computer_cards_hidden = []
 
 def draw_card(cards_on_hand):
   cards_on_hand.append(random.choice(cards))
+def score(cards_on_hand):
+  if 11 in cards_on_hand and sum(cards_on_hand) > 21:
+    cards_on_hand.remove(11)
+    cards_on_hand.append(1)
+  return sum(cards_on_hand)
 def computer_turn():
-  if sum(computer_cards) < 15:
+  if score(computer_cards) < 15:
     draw_card(computer_cards)
     computer_cards_hidden.append("?")
     print("Cards on hand of computer: ",computer_cards_hidden)
 def drawing_began():
-  draw_card(user_cards)
-  draw_card(computer_cards)
-  draw_card(user_cards)
-  draw_card(computer_cards)
+  for i in range(2):
+    draw_card(user_cards)
+    draw_card(computer_cards) 
   draw_card(computer_cards_hidden)
   computer_cards_hidden.append("?")
-  print("My hand: ",user_cards)
+  print("My hand: ",user_cards,"score:",score(user_cards))
   print("Cards on hand of computer: ",computer_cards_hidden)
-def A_card_point_checker(cards_on_hand):
-  for index in range(0, len(cards_on_hand)):
-    if cards_on_hand[index] == 11 and sum(cards_on_hand) > 21:
-      cards_on_hand[index] = 1
+
 def compare_point():
-  A_card_point_checker(user_cards)
-  A_card_point_checker(computer_cards)
-  if sum(user_cards) > sum(computer_cards) or sum(computer_cards) > 21:
+  
+  if score(user_cards) > score(computer_cards) or score(computer_cards) > 21:
     print("Cards on hand of computer: ",computer_cards)
     print("Win")
-  elif sum(user_cards) < sum(computer_cards) or sum(user_cards) > 21:
+  elif score(user_cards) < score(computer_cards) or score(user_cards) > 21:
     print("Cards on hand of computer: ",computer_cards)
     print("Lose")
   else :
@@ -45,8 +45,8 @@ while not status:
   con = input("U want to draw more card(y/n): ")
   if con == "y":
     draw_card(user_cards)
-    print("My hand: ",user_cards)
-    if sum(user_cards) > 21:
+    print("My hand: ",user_cards,"score:",score(user_cards))
+    if score(user_cards) > 21:
       print("U lose")
       break
     else:
