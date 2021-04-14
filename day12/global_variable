@@ -1,0 +1,8 @@
+global a 
+a = "khoa"
+def b():
+  
+  a = "asdsad"
+  print(a)
+b()
+print(a)

@@ -1,0 +1,41 @@
+from random import randint
+from replit import clear
+
+EASY_LEVER_TURN = 10
+HARD_LEVER_TURN = 5
+answer = randint(1, 100)
+print(answer)
+def check_guess(guess):
+  if guess == answer:
+    print("Win")
+    return 0
+  elif guess > answer:
+    print("So Hight")
+  else:
+    print("So Low")
+def set_difficulty():
+  lever = input("Choose lever(hard/easy): ")
+  if lever == "hard":
+    return HARD_LEVER_TURN
+  elif lever == "easy":
+    return EASY_LEVER_TURN
+
+def start_game():
+  turns = set_difficulty()
+  guess = ""
+  while guess != answer:
+    print("U have ",turns," turn remaining to guess the number")
+    guess = int(input("Guess the number: "))
+    check_status = check_guess(guess)
+    if check_status == 0:
+      break
+    turns -= 1
+    if turns == 0:
+      print("Lose. Answer is ",answer)
+      break
+
+while input("Do u want to play a game(y/n): ") == "y":
+  clear()
+  start_game()  
+
+  
