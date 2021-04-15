@@ -322,7 +322,7 @@ def compare_figure(follower_count1, follower_count2):
   else:
     return "b"
 def start_game():
-  score = 0
+  score = 3
   status = False
   while  status:
     figureA = get_random_data()
@@ -338,5 +338,5 @@ def start_game():
       else:
         print(f"Sorry, that's wrong. Final score: {score}")
         status = True
-start_game()
+start_game
 

@@ -133,6 +133,14 @@ version = "5.1.0"
 
 [[package]]
 category = "main"
+description = "飞机大战"
+name = "plane-war"
+optional = false
+python-versions = "*"
+version = "1.0"
+
+[[package]]
+category = "main"
 description = "A library for interacting with features of repl.it"
 name = "replit"
 optional = false
@@ -178,7 +186,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "141c341ecc5ea3ee3a4c5e04437e5a0a9e1bf6d2b7601abd19c3ff87f332a03e"
+content-hash = "023bd08df9d4d36663a0479543320c221b320c3a92a9622e50837f3b32e6d56e"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -349,6 +357,9 @@ multidict = [
     {file = "multidict-5.1.0-cp39-cp39-win32.whl", hash = "sha256:fc13a9524bc18b6fb6e0dbec3533ba0496bbed167c56d0aabefd965584557d80"},
     {file = "multidict-5.1.0-cp39-cp39-win_amd64.whl", hash = "sha256:7df80d07818b385f3129180369079bd6934cf70469f99daaebfac89dca288359"},
     {file = "multidict-5.1.0.tar.gz", hash = "sha256:25b4e5f22d3a37ddf3effc0710ba692cfc792c2b9edfb9c05aefe823256e84d5"},
+]
+plane-war = [
+    {file = "plane_war-1.0.tar.gz", hash = "sha256:3283ae8d5ef4b65e0d9d2bfcb6529212cc8bc26b090ecac721f1348675975dc2"},
 ]
 replit = [
     {file = "replit-3.0.0-py3-none-any.whl", hash = "sha256:3dd4f21b8b2a44b8c645a15e87398fa129b356cb6a88faa5eedd30374cc404e1"},

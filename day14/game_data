@@ -1,5 +1,3 @@
-import random
-
 data = [
     {
         'name': 'Instagram',
@@ -302,41 +300,3 @@ data = [
         'country': 'United States'
     }
 ]
-vs = """
- _    __    
-| |  / /____
-| | / / ___/
-| |/ (__  ) 
-|___/____(_)
-"""
-def get_random_data():
-  return random.choice(data)
-def format_data(figure):
-  name = figure["name"]
-  description = figure["description"]
-  country = figure["country"]
-  return f"{name}, a {description}, from {country}"
-def compare_figure(follower_count1, follower_count2):
-  if follower_count1 > follower_count2:
-    return "a"
-  else:
-    return "b"
-def start_game():
-  score = 0
-  status = False
-  while  status:
-    figureA = get_random_data()
-    figureB = get_random_data()
-    if figureA != figureB:
-      print("Figure A:",format_data(figureA))
-      print(vs)
-      print("Figure B:",format_data(figureA))
-      guess = input("Who has more followers? Type 'A' or 'B': ").lower()
-      if guess == compare_figure(figureA["follower_count"], figureB["follower_count"]) :
-        score += 1
-        print(f"You're right! Current score: {score}.")
-      else:
-        print(f"Sorry, that's wrong. Final score: {score}")
-        status = True
-start_game()
-

@@ -8,6 +8,7 @@ authors = ["nnakhoa2310 <<>>"]
 python = "^3.8"
 replit = "^3.0.0"
 art = "^5.1"
+plane-war = "^1.0"
 
 [tool.poetry.dev-dependencies]
 
