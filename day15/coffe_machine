@@ -1,0 +1,38 @@
+from data import MENU as menu
+from data import resources
+
+revenue = 0
+def check_transaction(amount, materials):
+    global revenue
+    item = menu[materials]
+    if item["cost"] < amount:
+        revenue += item["cost"]
+        refund = round(amount - item["cost"], 3)
+        if resources["water"] < item["ingredients"]["water"]:
+            print("Sr, we're not enough water")
+        elif resources["milk"] < item["ingredients"]["milk"]:
+            print("Sr, we're not enough milk")
+        elif resources["coffe"] < item["ingredients"]["coffe"]:
+            print("Sr, we're not enough coffe")
+        else:
+            resources["water"] -= item["ingredients"]["water"]
+            resources["milk"] -= item["ingredients"]["milk"]
+            resources["coffe"] -= item["ingredients"]["coffe"]
+            print("You gave", amount,"dollal. Here is", refund, "dollars in change")
+    else:
+        print("Sr, we're not enough money")
+def process_coins():
+    """Returns the total calculated from coins inserted."""
+    print("Please insert coins.")
+    total = int(input("how many quarters?: ")) * 0.25
+    total += int(input("how many dimes?: ")) * 0.1
+    total += int(input("how many nickles?: ")) * 0.05
+    total += int(input("how many pennies?: ")) * 0.01
+    return round(total, 3)
+
+while True:
+    materials = input("What would you like? espresso(1.5$)/latte(2.5$)/cappuccino(3$):")
+    if materials == "report":
+        print(resources)
+        continue
+    check_transaction(process_coins(), materials)
