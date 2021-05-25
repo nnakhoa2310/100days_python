@@ -1,0 +1,1 @@
+print([a for a in range(0,6) if a > 2])
